@@ -4,8 +4,8 @@
   "port": 5432,
   "database": "influencer",
   "synchronize": true,
-  "logging": false,
+  "logging": true,
   "entities": [
-     "src/models/**/*.ts"
+    "src/models/**/*.ts"
   ]
 }
