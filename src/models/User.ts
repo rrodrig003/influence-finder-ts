@@ -1,4 +1,4 @@
-import {Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn} from 'typeorm';
+import {Entity, Column, PrimaryGeneratedColumn, OneToMany, JoinColumn, ManyToMany, JoinTable} from 'typeorm';
 import {Influencial_tweet} from './Influencial_tweet';
 
 @Entity()
@@ -29,6 +29,7 @@ export class User {
   @Column("alphanum")
   token_secret: string;
 
-  @OneToMany(type => Influencial_tweet, influencial_tweet => influencial_tweet.user)
+  @ManyToMany(type => Influencial_tweet)
+  @JoinTable()
   tweets: Influencial_tweet[];
 }

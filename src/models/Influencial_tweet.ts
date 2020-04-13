@@ -22,12 +22,9 @@ import { User } from './User';
     @Column()
     following_count: number;
 
-    @Column()
+    @Column({nullable: true})
     category: string;
 
     @Column()
     image_url: string;
-
-    @ManyToOne(type => User, user => user.tweets)
-    user: User;
   }
